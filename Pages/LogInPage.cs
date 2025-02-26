@@ -20,13 +20,18 @@ namespace PetShopAuto.Pages
         }
 
         public static string Url => BaseUrl + "/my-account-2/edit-account";
+
         public IWebElement UserNameField => driver.FindElement(By.CssSelector("#username"));
+
         public IWebElement PasswordField => driver.FindElement(By.CssSelector("#password"));
+
         public IWebElement LoginBtn => driver.FindElement(By.CssSelector("#customer_login > div.u-column1.col-1 > form > p:nth-child(3) > button"));
 
         public IWebElement UserNameErrorMsg => driver.FindElement(By.CssSelector("#post-176 > div > div > div.woocommerce-notices-wrapper > ul > li > strong"));
 
         public IWebElement PasswordErrorMsg => driver.FindElement(By.CssSelector("#post-176 > div > div > div.woocommerce-notices-wrapper > ul > li"));
+
+        public IWebElement UnouthorizedErrorMsg => driver.FindElement(By.CssSelector("#post-176 > div > div > div.woocommerce-notices-wrapper > ul > li"));
 
         public void OpenPage()
         {
