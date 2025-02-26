@@ -9,12 +9,6 @@ namespace PetShopAuto.Tests
     class PetZoneTests : BaseTest
     {
         [Test]
-        public void Verify_Login_With_Valid_Credentials()
-        {
-           
-        }
-
-        [Test]
         public void Verify_Error_Message_for_Login_With_Empty_UserName()
         {
             loginPage.PerformLogin("", "password");
@@ -32,7 +26,8 @@ namespace PetShopAuto.Tests
         [Test]
         public void Verify_Error_Message_for_Login_With_Invalid_Credentials()
         {
-            //#post-10 > div > div > div.woocommerce-notices-wrapper > ul > li
+            loginPage.PerformLogin("invalid", "invalid");
+            Assert.That(loginPage.UnouthorizedErrorMsg.Text, Is.EqualTo("Грешка: Потребителското име invalid не е разпознато за сайта. Ако не сте сигурни, можете да позлвате имейл адреса."));
         }
     }
 }
