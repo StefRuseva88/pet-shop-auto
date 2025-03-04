@@ -29,5 +29,12 @@ namespace PetShopAuto.Tests
             loginPage.PerformLogin("invalid", "invalid");
             Assert.That(loginPage.UnouthorizedErrorMsg.Text, Is.EqualTo("Грешка: Потребителското име invalid не е разпознато за сайта. Ако не сте сигурни, можете да позлвате имейл адреса."));
         }
+
+        [Test]
+        public void Verify_Successful_Login()
+        {
+            loginPage.PerformLogin("username", "password");
+            Assert.That(homePage.MyProfile.Displayed, Is.True);
+        }
     }
 }
