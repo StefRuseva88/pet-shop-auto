@@ -20,6 +20,8 @@ namespace PetShopAuto.Tests
 
         public LogInPage loginPage;
 
+        public HomePage homePage;
+
         public Actions actions;
 
 
@@ -37,6 +39,7 @@ namespace PetShopAuto.Tests
             actions = new Actions(driver);
 
             loginPage = new LogInPage(driver);
+            homePage = new HomePage(driver);
 
             loginPage.OpenPage();
             loginPage.PerformLogin("kraska7a_", "0897727710ksr_");
