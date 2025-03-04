@@ -31,10 +31,13 @@ namespace PetShopAuto.Tests
         }
 
         [Test]
-        public void Verify_Successful_Login()
+        public void Verify_Logout()
         {
-            loginPage.PerformLogin("username", "password");
-            Assert.That(homePage.MyProfile.Displayed, Is.True);
+            loginPage.PerformLogin("kraska7a_", "0897727710ksr_");
+
+            homePage.LogoutBtn.Click();
+            homePage.LogoutLink.Click();
+            Assert.That(loginPage.UserNameField.Displayed, Is.True);
         }
     }
 }

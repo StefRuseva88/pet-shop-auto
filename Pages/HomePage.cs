@@ -19,6 +19,8 @@ namespace PetShopAuto.Pages
 
         public IWebElement LogoutBtn => driver.FindElement(By.CssSelector("#menu-item-11808 > a > span"));
 
+        public IWebElement LogoutLink => driver.FindElement(By.CssSelector("#post-176 > div > div > div > div > div > a"));
+
         public IWebElement Footer => driver.FindElement(By.CssSelector(".below-footer font"));
 
         public IWebElement Logo => driver.FindElement(By.CssSelector("#menu-item-11808 > a > span"));
