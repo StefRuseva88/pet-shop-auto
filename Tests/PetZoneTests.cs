@@ -31,13 +31,21 @@ namespace PetShopAuto.Tests
         }
 
         [Test]
-        public void Verify_Logout()
+        public void Verify_Logout_Button_Readirects_Successfully()
         {
             loginPage.PerformLogin("kraska7a_", "0897727710ksr_");
 
             homePage.LogoutBtn.Click();
             homePage.LogoutLink.Click();
             Assert.That(loginPage.UserNameField.Displayed, Is.True);
+        }
+
+        [Test]
+        public void Verify_Footer_With_All_Rights_Reserved()
+        {
+            loginPage.PerformLogin("kraska7a_", "0897727710ksr_");
+            actions.MoveToElement(homePage.Footer).Perform();
+            Assert.That(homePage.Footer.Text, Is.EqualTo("© 2023 Petzone.bg. Всички права запазени."));
         }
     }
 }
